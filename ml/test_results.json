@@ -1,0 +1,70 @@
+{
+  "total_tests": 4,
+  "correct": 4,
+  "results": [
+    {
+      "test": 1,
+      "expected": "FAKE",
+      "prediction": "FAKE",
+      "confidence": 92.49,
+      "credibility_score": 8,
+      "credibility_level": "Highly Suspicious",
+      "correct": true,
+      "top_words": [
+        "truth",
+        "hiding",
+        "share delete",
+        "share",
+        "delete"
+      ]
+    },
+    {
+      "test": 2,
+      "expected": "REAL",
+      "prediction": "REAL",
+      "confidence": 90.94,
+      "credibility_score": 91,
+      "credibility_level": "Highly Credible",
+      "correct": true,
+      "top_words": [
+        "data",
+        "announced",
+        "citing",
+        "today",
+        "rate"
+      ]
+    },
+    {
+      "test": 3,
+      "expected": "FAKE",
+      "prediction": "FAKE",
+      "confidence": 97.21,
+      "credibility_score": 3,
+      "credibility_level": "Highly Suspicious",
+      "correct": true,
+      "top_words": [
+        "want",
+        "exposed",
+        "truth",
+        "secret",
+        "medium"
+      ]
+    },
+    {
+      "test": 4,
+      "expected": "REAL",
+      "prediction": "REAL",
+      "confidence": 92.71,
+      "credibility_score": 93,
+      "credibility_level": "Highly Credible",
+      "correct": true,
+      "top_words": [
+        "published",
+        "conducted",
+        "study",
+        "study published",
+        "reviewed conducted"
+      ]
+    }
+  ]
+}

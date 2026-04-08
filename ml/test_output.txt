@@ -1,0 +1,46 @@
+﻿≡ƒöä Loading model from: models/fake_news_model.joblib
+≡ƒöä Loading preprocessor from: models/preprocessor.joblib
+Γ£à Predictor ready!
+  Γ£à Preprocessed 1 texts
+  Γ£à Preprocessed 1 texts
+
+============================================================
+TEST 1 - Expected: FAKE
+============================================================
+  Prediction:  FAKE
+  Confidence:  92.49%
+  Credibility: 8/100 (Highly Suspicious)
+  Top words:   ['truth', 'hiding', 'share delete', 'share', 'delete']
+  Γ£à Preprocessed 1 texts
+  Γ£à Preprocessed 1 texts
+
+============================================================
+TEST 2 - Expected: REAL
+============================================================
+  Prediction:  REAL
+  Confidence:  90.94%
+  Credibility: 91/100 (Highly Credible)
+  Top words:   ['data', 'announced', 'citing', 'today', 'rate']
+  Γ£à Preprocessed 1 texts
+  Γ£à Preprocessed 1 texts
+
+============================================================
+TEST 3 - Expected: FAKE
+============================================================
+  Prediction:  FAKE
+  Confidence:  97.21%
+  Credibility: 3/100 (Highly Suspicious)
+  Γ£à Preprocessed 1 texts
+  Γ£à Preprocessed 1 texts
+
+============================================================
+TEST 4 - Expected: REAL
+============================================================
+  Prediction:  REAL
+  Confidence:  92.71%
+  Credibility: 93/100 (Highly Credible)
+
+============================================================
+ALL TESTS COMPLETE!
+Accuracy: 4/4 correct
+============================================================

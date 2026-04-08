@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FakeShield</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 380px;
+      min-height: 200px;
+      font-family: 'Segoe UI', -apple-system, sans-serif;
+      background: #0a0a0f;
+      color: #f0f0f5;
+    }
+    .header {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .header-icon { font-size: 24px; }
+    .header-title { font-size: 16px; font-weight: 700; }
+    .header-sub { font-size: 10px; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.5px; }
+    
+    .content { padding: 16px; }
+    
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .btn:hover { opacity: 0.9; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    
+    .status {
+      text-align: center;
+      padding: 8px;
+      color: #9898a8;
+      font-size: 12px;
+    }
+    
+    /* Result */
+    .result { margin-top: 16px; animation: fadeIn 0.3s; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    
+    .verdict {
+      text-align: center;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 12px;
+    }
+    .verdict.fake { background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); }
+    .verdict.real { background: rgba(34, 197, 94, 0.1); border: 1px solid rgba(34, 197, 94, 0.3); }
+    
+    .verdict-icon { font-size: 32px; margin-bottom: 4px; }
+    .verdict-label { font-size: 20px; font-weight: 800; }
+    .verdict-label.fake { color: #ef4444; }
+    .verdict-label.real { color: #22c55e; }
+    .verdict-conf { color: #9898a8; font-size: 13px; margin-top: 4px; }
+    
+    .metrics {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .metric {
+      background: #16161f;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 12px;
+      text-align: center;
+    }
+    .metric-val {
+      font-size: 18px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .metric-label {
+      font-size: 10px;
+      color: #5a5a6e;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 2px;
+    }
+    
+    .gauge {
+      background: #16161f;
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .gauge-title { font-size: 12px; color: #9898a8; margin-bottom: 8px; }
+    .gauge-bar { height: 6px; background: #1c1c28; border-radius: 3px; overflow: hidden; }
+    .gauge-fill { height: 100%; border-radius: 3px; transition: width 1s; }
+    
+    .words { margin-top: 12px; }
+    .words-title { font-size: 12px; color: #9898a8; margin-bottom: 6px; }
+    .word-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+    .word-tag {
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .word-tag.fake { background: rgba(239,68,68,0.1); color: #ef4444; }
+    .word-tag.real { background: rgba(34,197,94,0.1); color: #22c55e; }
+    
+    .error {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #ef4444;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      margin-top: 12px;
+    }
+    
+    .footer {
+      text-align: center;
+      padding: 12px;
+      font-size: 10px;
+      color: #5a5a6e;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="header-icon">🛡️</span>
+    <div>
+      <div class="header-title">FakeShield</div>
+      <div class="header-sub">AI News Verification</div>
+    </div>
+  </div>
+  
+  <div class="content">
+    <button class="btn" id="analyzeBtn">🔍 Analyze This Page</button>
+    <div class="status" id="status">Click to analyze the current webpage</div>
+    
+    <div id="resultContainer"></div>
+    <div id="errorContainer"></div>
+  </div>
+  
+  <div class="footer">
+    Powered by AI • FakeShield v1.0
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

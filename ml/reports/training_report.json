@@ -1,0 +1,191 @@
+{
+  "model_type": "LogisticRegression",
+  "data_source": "all",
+  "dataset_size": 29170,
+  "train_size": 23336,
+  "test_size": 5834,
+  "feature_count": 50000,
+  "metrics": {
+    "accuracy": 0.8051,
+    "precision": 0.805,
+    "recall": 0.8051,
+    "f1_score": 0.805,
+    "auc_roc": 0.9068,
+    "classification_report": {
+      "REAL": {
+        "precision": 0.8111504995165968,
+        "recall": 0.8204041720990873,
+        "f1-score": 0.81575109382596,
+        "support": 3068
+      },
+      "FAKE": {
+        "precision": 0.798242402050531,
+        "recall": 0.7881417208966016,
+        "f1-score": 0.793159905402947,
+        "support": 2766
+      },
+      "accuracy": 0.8051079876585533,
+      "macro avg": {
+        "precision": 0.8046964507835639,
+        "recall": 0.8042729464978444,
+        "f1-score": 0.8044554996144535,
+        "support": 5834
+      },
+      "weighted avg": {
+        "precision": 0.8050305479240123,
+        "recall": 0.8051079876585533,
+        "f1-score": 0.8050402218379494,
+        "support": 5834
+      }
+    },
+    "confusion_matrix": [
+      [
+        2517,
+        551
+      ],
+      [
+        586,
+        2180
+      ]
+    ],
+    "cross_validation": {
+      "fold_scores": [
+        0.8149,
+        0.8014,
+        0.7955,
+        0.8087,
+        0.8119
+      ],
+      "mean_f1": 0.8065,
+      "std_f1": 0.0071
+    },
+    "top_features": {
+      "fake_indicators": [
+        [
+          "october",
+          5.2484
+        ],
+        [
+          "article",
+          2.9919
+        ],
+        [
+          "hillary",
+          2.9469
+        ],
+        [
+          "secret",
+          2.8698
+        ],
+        [
+          "share",
+          2.8585
+        ],
+        [
+          "november",
+          2.6556
+        ],
+        [
+          "exposed",
+          2.5776
+        ],
+        [
+          "video",
+          2.5064
+        ],
+        [
+          "truth",
+          2.4714
+        ],
+        [
+          "caught",
+          2.4171
+        ],
+        [
+          "hidden",
+          2.4041
+        ],
+        [
+          "secretly",
+          2.3278
+        ],
+        [
+          "com",
+          2.1382
+        ],
+        [
+          "cure",
+          2.0332
+        ],
+        [
+          "medium",
+          2.0036
+        ]
+      ],
+      "real_indicators": [
+        [
+          "official",
+          -2.9467
+        ],
+        [
+          "gop",
+          -2.8806
+        ],
+        [
+          "percent",
+          -2.5916
+        ],
+        [
+          "data",
+          -2.5565
+        ],
+        [
+          "press",
+          -2.4697
+        ],
+        [
+          "primary",
+          -2.4118
+        ],
+        [
+          "peer reviewed",
+          -2.1273
+        ],
+        [
+          "reviewed",
+          -2.1014
+        ],
+        [
+          "georgia",
+          -2.0985
+        ],
+        [
+          "sander",
+          -2.0701
+        ],
+        [
+          "republican",
+          -2.0663
+        ],
+        [
+          "annual",
+          -2.0191
+        ],
+        [
+          "since",
+          -1.9413
+        ],
+        [
+          "still",
+          -1.9299
+        ],
+        [
+          "published",
+          -1.9165
+        ]
+      ]
+    }
+  },
+  "model_path": "models\\fake_news_model.joblib",
+  "preprocessor_path": "models\\preprocessor.joblib"
+}

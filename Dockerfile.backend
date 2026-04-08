@@ -1,0 +1,31 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install ML dependencies
+COPY ml/requirements.txt /app/ml/requirements.txt
+RUN pip install --no-cache-dir -r /app/ml/requirements.txt
+
+# Install backend dependencies
+COPY backend/requirements.txt /app/backend/requirements.txt
+RUN pip install --no-cache-dir -r /app/backend/requirements.txt
+
+# Copy ML module
+COPY ml/ /app/ml/
+
+# Download NLTK data
+RUN python -c "import nltk; nltk.download('punkt'); nltk.download('punkt_tab'); nltk.download('stopwords'); nltk.download('wordnet'); nltk.download('omw-1.4')"
+
+# Train model if not present
+RUN cd /app/ml && python train.py --compare || true
+
+# Copy remaining modules
+COPY backend/ /app/backend/
+COPY blockchain/ /app/blockchain/
+COPY geo-analytics/ /app/geo-analytics/
+
+WORKDIR /app/backend
+
+EXPOSE 8000
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

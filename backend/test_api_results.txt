@@ -1,0 +1,51 @@
+﻿=== Health Check ===
+  Status: 200
+  Response: {
+  "status": "healthy",
+  "version": "1.0.0",
+  "model_loaded": true,
+  "uptime_seconds": 73.84
+}
+
+=== Predict FAKE news ===
+  Status: 200
+  Prediction: FAKE
+  Confidence: 92.49%
+  Credibility: 8/100 (Highly Suspicious)
+
+=== Predict REAL news ===
+  Status: 200
+  Prediction: REAL
+  Confidence: 90.94%
+  Credibility: 91/100 (Highly Credible)
+
+=== Monitor News ===
+  Status: 200
+  Articles: 5
+  Fake: 2, Real: 3
+    - [REAL] Global Climate Summit Reaches Historic Agreement...
+    - [REAL] New Study Confirms Benefits of Mediterranean Diet...
+    - [FAKE] SHOCKING: Government Hiding Secret Weather Control Program!...
+
+=== Dashboard Stats ===
+  Status: 200
+  Total analyzed: 2
+  Fake: 1, Real: 1
+  Avg credibility: 49.5
+
+=== History ===
+  Status: 200
+  Total records: 2
+    - [REAL] According to Reuters, the Federal Reserve announce...
+    - [FAKE] BREAKING: Scientists discover that 5G towers cause...
+
+==================================================
+TEST RESULTS:
+  Health       -> PASS
+  Fake         -> PASS
+  Real         -> PASS
+  Monitor      -> PASS
+  Dashboard    -> PASS
+  History      -> PASS
+
+  6/6 tests passed
